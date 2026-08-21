@@ -1,0 +1,480 @@
+/* Base Styles */
+:root {
+    --primary-color: #F4811F;
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --card-bg: rgba(32, 32, 32, 0.8);
+    --font-family: 'Space Grotesk', sans-serif;
+}
+
+* {
+    margin: auto;
+    padding: initial;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(45deg, #000000, #1a0f00);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    height: 40px;
+}
+
+.logo img {
+    height: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem 4rem 4rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn.primary:hover {
+    background-color: #ff9633;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+}
+
+.btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 90%;
+    height: auto;
+    transform: rotate(-5deg);
+    filter: drop-shadow(0 0 20px rgba(244, 129, 31, 0.3));
+}
+
+/* Trending Section */
+.trending {
+    padding: 4rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.trending h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax( 250px, 6fr));
+    gap: 50px;
+    max-width: 1500px;
+    margin: center;
+    
+}
+
+.nft-card {
+    background: rgba(32, 32, 32, 0.6);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 50px;
+    
+    
+    
+}
+
+.nft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(244, 129, 31, 0.2);
+}
+
+.nft-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.nft-info {
+    padding: 1.5rem;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.price-info p {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn.buy-now {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Concept Section */
+.concept {
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.concept-left, .concept-right {
+    position: relative;
+}
+
+.concept-left::after,
+.concept-right::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.concept h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.concept p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    max-width: 80%;
+}
+
+/* Artists Section */
+.top-artists {
+    padding: 4rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.artist-card {
+    background: rgba(32, 32, 32, 0.6);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.artist-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.artist-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.artist-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.btn.follow {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Subscribe Section */
+.subscribe {
+    padding: 6rem 4rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.subscribe-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.subscribe h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.subscribe p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.subscribe-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(32, 32, 32, 0.95);
+    padding: 4rem;
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 6rem;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    .hero {
+        padding: 6rem 2rem 2rem;
+    }
+    
+    .concept {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    nav {
+        padding: 1rem 2rem;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .concept {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .concept p {
+        max-width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
